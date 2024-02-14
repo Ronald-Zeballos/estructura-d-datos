@@ -1,0 +1,107 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+float solucion_unica(float b, float a);
+void  solucion_reales(float a, float b, float c, float& x1, float& x2);
+void  soluciones_imaginarias(float a, float b,float c, float& xR, float& xi);
+void menu();
+
+
+int main()
+{
+    menu();
+    return 0;
+}
+void menu()
+{
+    int opcion;
+    float a, b, c, d, x1, x2, xR, xi;
+         d = b * b - 4 * a * c;
+
+    do{
+    cout<<"---INGRESE UNA OPCION DEL MENU--- "<<endl;
+    cout<<"      1) solucion unica           "<<endl;
+    cout<<"      2) solucion real            "<<endl;
+    cout<<"      3) solucion imaginaria      "<<endl;
+    cout<<"      0) SALIR                    "<<endl;
+    cout<<"--------------------------------- "<<endl;
+    cout<<" opcion:   ";
+    cin>>opcion;
+    switch(opcion)
+       {
+        case 1:
+                cout << "ingresar el valor de a : "; cin >> a;
+
+    if (a == 0)
+        cout << "la ecuacion no tiene resultados" << endl;
+    else
+    {
+        cout << "ingresar el valor de b : "; cin >> b;
+        cout << "ingresar el valor de c : "; cin >> c; }
+         d = b * b - 4 * a * c;
+                cout << "la solucion es unica y tiene un resultado de: \n" << solucion_unica(b, a);
+                break;
+        case 2: 
+                cout << "ingresar el valor de a : "; cin >> a;
+
+    if (a == 0)
+        cout << "la ecuacion no tiene resultados" << endl;
+    else
+    {
+        cout << "ingresar el valor de b : "; cin >> b;
+        cout << "ingresar el valor de c : "; cin >> c; }
+         d = b * b - 4 * a * c;
+                solucion_reales(a, b, c, x1, x2);
+                cout << "la solucion de la ecuacion es" << " x1= " << x1 << " y " << " x2= " << x2 << endl;
+                break;
+        case 3: 
+                cout << "ingresar el valor de a : "; cin >> a;
+
+    if (a == 0)
+        cout << "la ecuacion no tiene resultados \n " << endl;
+    else
+    {
+        cout << "ingresar el valor de b : "; cin >> b;
+        cout << "ingresar el valor de c : "; cin >> c; }
+         d = b * b - 4 * a * c;
+                soluciones_imaginarias(a, b, c, xR, xi);
+                cout << "el resultado de la ecuacion es: " << xR << "+" << xi << "i" << endl;
+                cout << "el resultado de la ecuacion es: " << xR << "-" << xi << "i" << endl;
+                break;
+        case 0: cout<<" adios :) "<<endl;
+        default: cout<<"valor incorrecto ingrese nuevamente un valor"<<endl;
+    }
+    
+}while(opcion!=0);
+
+}
+
+
+      float solucion_unica(float b, float a)
+        {
+          float d, c;
+           d = b * b - 4 * a * c;
+           
+            float aux;
+            aux = b / (2 * a);
+            
+            return aux;
+        }
+        void  solucion_reales(float a, float b, float c, float& x1, float& x2)
+        {
+            float d;
+            
+            d = b * b - 4 * a * c;
+            x1 = (-b + sqrt(d)) / (2 * a);
+            x2 = (-b - sqrt(d)) / (2 * a);
+            
+        }
+
+        void soluciones_imaginarias(float a, float b, float c, float& xR, float& xi)
+        {
+            float d;
+            d = b * b - 4 * a * c;
+            xR = -b / (2 * a);
+            xi = sqrt(-d) / (2 * a);
+            
+        }
