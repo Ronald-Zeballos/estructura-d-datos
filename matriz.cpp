@@ -38,7 +38,7 @@ void Matriz::mostrar(int m[MAX][MAX]) {
 		}
 	}
 }
-void Matriz::promedio(int m[MAX][max]) {
+void Matriz::promedio(int m[MAX][MAX]) {
 	int prom, s = 0;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
@@ -50,11 +50,11 @@ void Matriz::promedio(int m[MAX][max]) {
 
 }
 
-void Matriz::mayor(int m[max][max]) {
+void Matriz::mayor(int m[MAX][MAX]) {
 	int mayor = 0;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			if (m[i][j] > max) {
+			if (m[i][j] > mayor) {
 				mayor = m[i][j];
 			}
 		}
