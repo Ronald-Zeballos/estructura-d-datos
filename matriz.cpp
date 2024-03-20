@@ -5,6 +5,7 @@
 using namespace std;
 
 Matriz::Matriz(void) {
+	cout << "trabajo de matrices en clases" << endl;
 
 }
 Matriz::~Matriz(void) {
@@ -31,6 +32,7 @@ void Matriz::cargar(int m[MAX][MAX]) {
 	}
 }
 void Matriz::mostrar(int m[MAX][MAX]) {
+	cout << "la matriz ingresada es: " << endl;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
 			cout << "M[ " << i << j << "]= " << m[i][j] << endl;
@@ -42,7 +44,7 @@ void Matriz::promedio(int m[MAX][MAX]) {
 	int prom, s = 0;
 	for (int i = 0; i < fil; i++) {
 		for (int j = 0; j < col; j++) {
-			s = s + M[i][j];
+			s = s + m[i][j];
 			prom = s / (fil * col);
 		}
 	}
@@ -58,6 +60,7 @@ void Matriz::mayor(int m[MAX][MAX]) {
 				mayor = m[i][j];
 			}
 		}
-		cout << "el digito mayor es: " << mayor << endl;
+		
 	}
+	cout << "el digito mayor es: " << mayor << endl;
 }
