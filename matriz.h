@@ -1,10 +1,10 @@
 #pragma once
-#define max 10
+#define MAX 10
 class Matriz
 
 {
 private:
-	int fil, col, M[max][max];
+	int fil, col, M[MAX][MAX];
 public:
 	Matriz(void);
 	~Matriz(void);
@@ -12,10 +12,10 @@ public:
 	int get_fil();
 	void set_col(int columna);
 	int get_col();
-	void cargar(int m[max][max]);
-	void mostrar(int m[max][max]);
-	void promedio(int m[max][max]);
-	void mayor(int m[max][max]);
+	void cargar(int m[MAX][MAX]);
+	void mostrar(int m[MAX][MAX]);
+	void promedio(int m[MAX][MAX]);
+	void mayor(int m[MAX][MAX]);
 
 
 };
