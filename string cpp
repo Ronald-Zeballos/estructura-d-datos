@@ -1,0 +1,108 @@
+#include "Cadenas.h"
+#include <iostream >
+#include <string>
+using namespace std;
+
+Cadenas::Cadenas() {
+	cout << "hola como estas que tenas un lindo dia: ";
+	longitud = 0;
+}
+Cadenas::~Cadenas() {
+
+}
+string Cadenas::get_cadenas() {
+	return cadenas;
+}
+void Cadenas::set_cadenas(string car) {
+	cadenas = car;
+	longitud = cadenas.length();
+}
+int Cadenas::tamanio() {
+	return longitud;
+}
+void Cadenas::comparar(string nom1,string nom2) {
+	
+	if (nom1.compare(nom2) == 0)
+		cout << endl << "Los datos coinciden" << endl;
+	else
+		cout << nom1 << " es diferente que " << nom2 << " :1" << endl;
+}
+void Cadenas::contarvocal(string nom) {
+	int cont = 0;
+	cout << endl << "Ejemplo de uso de elementos individuales: " << endl;
+	cout << endl << "Contar vocales" << endl << endl;
+	for (int i = 0; i < longitud; i++)
+		if (nom[i] == 'a' || nom[i] == 'e' || nom[i] == 'i' || nom[i] == 'o' || nom[i] == 'u')
+			cont++;
+
+	cout << "Numero de vocales: " << cont << endl;
+
+	cout << endl << "Ejemplo de uso de elementos individuales con at: " << endl;
+	cont = 0;
+	for (int i = 0; i < longitud; i++)
+		if (nom.at(i) == 'a' || nom.at(i) == 'e' || nom.at(i) == 'i' || nom.at(i) == 'o' || nom.at(i) == 'u')
+			cont++;
+	cout << "Numero de vocales: " << cont << endl;
+
+}
+//Amin Barrientos 
+void Cadenas::encontracaracter(string car1, string car2)
+{
+
+	//Encuentra caracteres en string
+	cout << car2.find(' ');
+	longitud = car2.length();
+	for (int i = 0; i < longitud; i++)
+		if (car2.at(i) == ' ')
+			cout << endl << "Existe un espacio en: " << i;
+
+}
+
+void Cadenas::quitarvocal(string car1, string car2)
+{
+	car2 = car1;
+	longitud = 0;
+	longitud = car1.length();
+	for (int i = 0; i < longitud; i++)
+		if (car1[i] != 'a' && car1[i] != 'e' && car1[i] != 'i' && car1[i] != 'o' && car1[i] != 'u')
+		{
+			car2[longitud] = car1[i];
+			longitud++;
+		}
+	cout << "Sin vocales es: " << car2;
+
+}
+string Cadenas::invertir(string car, string car2)
+{
+	int i;
+	char aux;
+	car2 = car;
+	for (i = 0; i < longitud / 2; i++)
+	{
+		aux = car[i];
+		car[i] = car[longitud - 1 - i];
+		car[longitud - 1 - i] = aux;
+	}
+	return car;
+}
+bool Cadenas::palindromo(string car, string car2)
+{
+	if (car2.compare(car) == 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+}
+string Cadenas::sustraer(string car, int pos)
+{
+	return car.substr(pos, longitud - pos);
+}
+
+
+
+
+
