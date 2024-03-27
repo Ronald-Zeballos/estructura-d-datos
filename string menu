@@ -1,0 +1,90 @@
+#include <iostream>
+#include "Cadenas.h"
+#include <string>
+
+
+using namespace std;
+
+
+int main()
+
+{
+	int opcion,pos;
+	Cadenas objeto1;
+	string nombre,nombre2;
+
+	do
+	{
+		cout << "      Menu                \n";
+		cout << "1.-Pedir un string        \n";
+		cout << "2.-longitud               \n";
+		cout << "3.-comprar                \n";
+		cout << "4.-contar vocales         \n";
+		cout << "5.-sacar un substring     \n";
+		cout << "6.-encontrar un caracter  \n";
+		cout << "7.-invertir               \n";
+		cout << "8.-quitar vocal           \n";
+		cout << "9.-                       \n";
+		cout << "0.-Salir                  \n";
+		cout << "Opcion:  ";
+		cin >> opcion;
+		switch (opcion)
+		{
+		case 1:
+			cin.ignore();
+			cout << "ingreasr un string una palabra: ";
+			getline(cin, nombre);
+			objeto1.set_cadenas(nombre);
+			break;
+		case 2:
+			cout<<"la longitud es: "<<objeto1.tamanio();
+			break;
+		case 3:
+			cin.ignore();
+			cout << endl << "Ejemplo de uso de compare para determinar si dos cadenas son iguales";
+			cout << endl << "Redigite el nombre: ";
+			getline(cin, nombre2);
+			objeto1.comparar(nombre, nombre2);
+			break;
+		case 4:
+			objeto1.contarvocal(nombre);
+		case 5:
+			cout << "El string invertido es: " << objeto1.invertir(nombre, nombre2);
+			break;
+		case 6:
+			objeto1.encontracaracter(nombre, nombre2 );
+			break;
+		case 7:
+			objeto1.quitarvocal(nombre, nombre2);
+			break;
+		case 8:
+			if (objeto1.palindromo(nombre, nombre2) == true)
+			{
+				cout << "El string es un palindromo." << endl;
+			}
+			else
+			{
+				cout << "El string no es un palindromo." << endl;
+			}
+			
+			break;
+		case 9: 
+			cout << "Ingrese una posición desde la cual eliminar: ";
+			cin >> pos;
+			cout << "El resultado es: " << objeto1.sustraer(nombre, pos);
+
+			break;
+		case 0:
+
+			cout << "salir\n";
+			break;
+		default:
+			cout << "Opcion invalida";
+		}
+		system("pause");
+		system("cls");
+	} while (opcion != 0);
+
+	return 0;
+}
+
